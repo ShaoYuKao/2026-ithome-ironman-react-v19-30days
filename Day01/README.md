@@ -1,6 +1,6 @@
 # Day 01｜React 是什麼 & 開發環境建置
 
-- 今日範例程式碼：[`Day01\examples`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/Day01/examples)
+- 今日範例程式碼：[`Day01\examples`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day01/examples)
 
 ## 一、React 是什麼？
 
