@@ -1,6 +1,6 @@
 # Day 02｜JSX 語法
 
-- 今日範例程式碼：[`Day02\examples\profile-dynamic`](xxxxxxxxxx)
+- 今日範例程式碼：[`Day02\examples\profile-dynamic`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day02/examples/profile-dynamic)
 
 ## 一、JSX 是什麼？
 
