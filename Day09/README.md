@@ -1,6 +1,6 @@
 # Day 09｜表單處理進階
 
-- 今日範例程式碼：[`Day09\examples\day09-form-lab`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day9/examples/day09-form-lab)
+- 今日範例程式碼：[`Day09\examples\day09-form-lab`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day09/examples/day09-form-lab)
 
 ## 一、受控元件（Controlled Component）vs 非受控元件（Uncontrolled Component）
 
