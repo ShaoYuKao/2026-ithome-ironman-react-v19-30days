@@ -1,0 +1,260 @@
+.ref-lab-page {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.page-header h1 {
+  margin: 8px 0 16px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 共用表單元素 */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.form-input {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.live-echo {
+  font-size: 14px;
+  color: var(--text-h);
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.secondary-btn {
+  padding: 8px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* AutoFocusDemo */
+.step-indicator {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.step-dot {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--code-bg);
+  color: var(--text);
+}
+
+.step-dot--active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.step-dot--done {
+  color: var(--success);
+}
+
+.step-fields {
+  min-height: 76px;
+}
+
+/* ScrollToTopDemo */
+.jump-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jump-form-row {
+  display: flex;
+  gap: 8px;
+}
+
+.jump-form-row .form-input {
+  max-width: 120px;
+}
+
+.scroll-box {
+  height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--code-bg);
+}
+
+.scroll-item {
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.scroll-item--highlight {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* MeasureSizeDemo */
+.measure-box {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.measure-box p {
+  margin: 0 0 8px;
+}
+
+.measure-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* RenderCountDemo */
+.render-count-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.render-count-box {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.render-count-label {
+  font-size: 12px;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.render-count-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+  font-family: var(--mono);
+}
+
+/* StopwatchDemo */
+.stopwatch-display {
+  font-family: var(--mono);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--text-h);
+  text-align: center;
+  letter-spacing: 2px;
+}
