@@ -1,0 +1,215 @@
+.context-lab-page {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.page-header h1 {
+  margin: 8px 0 16px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 共用表單元素 */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.form-input {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.live-echo {
+  font-size: 14px;
+  color: var(--text-h);
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.secondary-btn {
+  padding: 8px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* PropsDrillingDemo / ThemeToggleDemo：巢狀階層視覺化 */
+.props-drilling-tree {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.props-drilling-tree--light {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.props-drilling-tree--dark {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.props-drilling-level {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px dashed rgba(128, 128, 128, 0.35);
+  border-radius: 8px;
+}
+
+.props-drilling-level .form-hint {
+  color: inherit;
+  opacity: 0.75;
+}
+
+.avatar-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.avatar-btn--light {
+  background: #fff7ed;
+  color: #92400e;
+  border: 2px solid #fbbf24;
+}
+
+.avatar-btn--dark {
+  background: #1e293b;
+  color: #e0e7ff;
+  border: 2px solid #60a5fa;
+}
+
+.context-demo-page {
+  border-radius: 12px;
+  padding: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.context-demo-page--light {
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px dashed var(--border);
+}
+
+.context-demo-page--dark {
+  background: #0b1120;
+  color: #e2e8f0;
+  border: 1px dashed #334155;
+}
+
+.context-demo-card {
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.context-demo-card--light {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.context-demo-card--dark {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.context-demo-card .form-hint {
+  color: inherit;
+  opacity: 0.75;
+}
+
