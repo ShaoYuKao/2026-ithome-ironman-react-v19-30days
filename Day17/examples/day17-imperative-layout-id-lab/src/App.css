@@ -1,0 +1,329 @@
+.lab-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.lab-header {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* 三個範例的分頁切換 */
+.mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mode-tab {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mode-tab--active {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* 共用卡片容器 */
+.demo-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.demo-card + .demo-card {
+  margin-top: 20px;
+}
+
+.demo-desc {
+  color: var(--text);
+  line-height: 1.7;
+  margin: 8px 0 18px;
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.demo-success {
+  margin-top: 14px;
+  color: var(--success);
+  font-weight: 600;
+  background: var(--success-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-h);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn--primary {
+  border-color: var(--accent-border);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ===== 1️⃣ 表單欄位（forwardRef + useImperativeHandle） ===== */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.field-input {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 360px;
+}
+
+.field-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.field-input--error {
+  border-color: var(--danger);
+}
+
+.field-hint {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.field-error {
+  font-size: 12px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* 驗證失敗時的抖動動畫，由 CustomInput 的 shake() 方法觸發 */
+@keyframes field-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.field-input.shake {
+  animation: field-shake 0.4s ease;
+  border-color: var(--danger);
+}
+
+/* ===== 2️⃣ useLayoutEffect vs useEffect 聊天室新訊息捲動 ===== */
+.chat-lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.chat-demo {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  background: var(--social-bg);
+}
+
+.chat-demo h3 {
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: #fff;
+  /* 刻意不加 transition：這個範例要呈現的是「某個瞬間畫面到底是哪個顏色」，
+     漸層過渡動畫會讓「卡住的紅色」變成一段模糊漸變的色調，
+     反而讓 useLayoutEffect / useEffect 的差異更難分辨。 */
+}
+
+.chat-window--stale {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.chat-window--ok {
+  border-color: var(--success);
+  background: var(--success-bg);
+}
+
+.chat-bubble {
+  flex: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text-h);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.chat-window + .btn {
+  margin-top: 12px;
+}
+
+.chat-status {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-status strong {
+  color: var(--text-h);
+}
+
+.chat-timeline-wrap {
+  margin-top: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+
+.chat-timeline {
+  margin: 0;
+  padding-left: 20px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-h);
+  line-height: 1.8;
+}
+
+.chat-timeline-note {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.chat-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+/* ===== 3️⃣ useId ===== */
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.field-group {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 0;
+}
+
+.field-group legend {
+  font-weight: 600;
+  color: var(--text-h);
+  padding: 0 4px;
+}
+
+.id-report {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.id-report--good {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.id-report--bad {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.rendered-id-list {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  margin-top: 10px;
+  line-height: 1.8;
+  word-break: break-all;
+}
