@@ -1,0 +1,220 @@
+.lab-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.lab-header {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* 模式切換分頁 */
+.mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mode-tab {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mode-tab--active {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* 搜尋面板 */
+.search-board {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.form-input {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 360px;
+}
+
+.form-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.status-hint {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.status-hint--stale {
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.status-hint--pending {
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
+/* 即時輸入延遲量測面板 */
+.latency-meter {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background: var(--social-bg);
+}
+
+.latency-meter__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.latency-meter__row + .latency-meter__row {
+  margin-top: 4px;
+}
+
+.latency-meter__label {
+  color: var(--text);
+}
+
+.latency-meter__value {
+  font-family: var(--mono);
+  color: var(--text-h);
+  font-size: 15px;
+}
+
+.latency-meter__value--good {
+  color: var(--success);
+}
+
+.latency-meter__value--bad {
+  color: var(--danger);
+}
+
+.latency-meter__hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.results-wrap {
+  transition: opacity 0.15s ease;
+  opacity: 1;
+}
+
+.results-wrap--stale {
+  opacity: 0.5;
+}
+
+.board-meta {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.board-meta strong {
+  color: var(--text-h);
+}
+
+/* 聯絡人清單 */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  flex-wrap: wrap;
+}
+
+.contact-row__name {
+  font-weight: 600;
+  color: var(--text-h);
+  min-width: 90px;
+}
+
+.contact-row__email {
+  font-size: 13px;
+  color: var(--text);
+  min-width: 170px;
+}
+
+.contact-row__city {
+  font-size: 13px;
+  color: var(--text-h);
+  min-width: 70px;
+}
+
+.contact-row__department {
+  font-size: 13px;
+  color: var(--text);
+  min-width: 70px;
+}
