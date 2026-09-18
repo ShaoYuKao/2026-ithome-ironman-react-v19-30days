@@ -1,0 +1,15 @@
+{
+  "name": "day18-actions-forms-lab-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Day18 範例的後端 API：會員註冊（模擬 Email 已被註冊）與留言板（可模擬延遲／失敗），供前端 useActionState / useOptimistic 示範使用。",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
