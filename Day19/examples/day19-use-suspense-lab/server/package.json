@@ -1,0 +1,15 @@
+{
+  "name": "day19-use-suspense-lab-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Day19 範例的後端 API：提供使用者資料查詢（模擬網路延遲與找不到使用者的 404），供前端 use() + Suspense 示範使用。",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

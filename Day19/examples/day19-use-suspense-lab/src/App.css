@@ -1,0 +1,280 @@
+.lab-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.lab-header {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* 兩個範例的分頁切換 */
+.mode-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mode-tab {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mode-tab--active {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* 共用卡片容器 */
+.demo-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.demo-card + .demo-card {
+  margin-top: 20px;
+}
+
+.demo-desc {
+  color: var(--text);
+  line-height: 1.7;
+  margin: 8px 0 18px;
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-h);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn--primary {
+  border-color: var(--accent-border);
+  background: var(--accent);
+  color: #fff;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+/* ===== 1️⃣ 使用者卡片（use(promise) + Suspense） ===== */
+.user-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.user-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  background: var(--social-bg);
+  min-height: 132px;
+  box-sizing: border-box;
+}
+
+.user-card__avatar {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.user-card__body h3 {
+  margin: 0 0 2px;
+  font-size: 18px;
+}
+
+.user-card__title {
+  color: var(--text);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.user-card__bio {
+  color: var(--text-h);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.user-card__email {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.user-card__meta {
+  font-size: 12px;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+/* Suspense fallback：骨架畫面 */
+.user-card--skeleton {
+  background: #fff;
+}
+
+.skeleton-block {
+  background: linear-gradient(
+    90deg,
+    var(--border) 25%,
+    var(--code-bg) 37%,
+    var(--border) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-pulse 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+.skeleton-block--avatar {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.skeleton-block--line {
+  height: 14px;
+  margin-bottom: 10px;
+}
+
+.skeleton-block--w60 {
+  width: 60%;
+}
+.skeleton-block--w40 {
+  width: 40%;
+}
+.skeleton-block--w90 {
+  width: 90%;
+}
+.skeleton-block--w70 {
+  width: 70%;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* use() 讀到 rejected Promise、由 Error Boundary 顯示的錯誤畫面 */
+.error-card {
+  border: 1px solid var(--danger);
+  background: var(--danger-bg);
+  border-radius: 10px;
+  padding: 16px 18px;
+  color: var(--danger);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.error-card p {
+  font-weight: 600;
+  flex: 1 1 260px;
+}
+
+/* ===== 2️⃣ 價格格式化（use(context) 條件式讀取） ===== */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.price-table th,
+.price-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.price-table th {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.price {
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.price--plain {
+  color: var(--text);
+  background: var(--code-bg);
+}
+
+.price--formatted {
+  color: var(--success);
+  background: var(--success-bg);
+  font-weight: 600;
+}
