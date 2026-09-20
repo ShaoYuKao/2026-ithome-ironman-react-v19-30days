@@ -1,0 +1,15 @@
+{
+  "name": "day20-fetch-lab-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Day20 範例的後端 API：提供文章列表（分類篩選）與文章詳情查詢（模擬網路延遲、模擬錯誤、找不到文章的 404），供前端 useFetch(url) 自訂 Hook 練習使用。",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
