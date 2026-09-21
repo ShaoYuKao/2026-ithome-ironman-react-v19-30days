@@ -1,6 +1,6 @@
 # Day 21｜週複習與小專案：效能優化 + 自訂 Hook 函式庫
 
-- 今日範例程式碼：[`Day21\examples\day21-hooks-library`](xxxxxxxxxx)
+- 今日範例程式碼：[`Day21\examples\day21-hooks-library`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day21/examples/day21-hooks-library)
 
 ## 一、本週學習地圖回顧
 
