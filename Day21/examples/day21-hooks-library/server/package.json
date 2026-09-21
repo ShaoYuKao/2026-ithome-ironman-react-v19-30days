@@ -1,0 +1,15 @@
+{
+  "name": "day21-hooks-library-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Day21 範例的後端 API：提供商品搜尋（?q= 關鍵字、模擬網路延遲），供前端搭配 useDebounce + useFetch 兩個自訂 Hook 練習「即時搜尋卻不狂打 API」的情境。",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
