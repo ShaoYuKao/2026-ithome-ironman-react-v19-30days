@@ -1,0 +1,15 @@
+{
+  "name": "day24-protected-routes-lab-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Day24 範例的後端 API：提供登入（POST /api/login）、受保護的個人資料（GET /api/profile）與登出（POST /api/logout），供前端練習 loader / action 資料載入與路由守衛使用。",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

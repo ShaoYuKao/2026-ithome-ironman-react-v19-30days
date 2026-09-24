@@ -1,0 +1,335 @@
+/* App Shell：導覽列 + 內容區，撐滿整個視窗高度 */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-brand {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.nav-link--active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 導覽列右側：登入狀態顯示區（使用者名稱 + 登出按鈕，或是登入連結） */
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-user {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+  white-space: nowrap;
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* 每個頁面內容的置中容器 */
+.page-inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+}
+
+/* 登入頁：內容比一般頁面窄，表單看起來更聚焦 */
+.page-inner--narrow {
+  max-width: 420px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-header--left {
+  text-align: left;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.page-header h1 {
+  margin: 8px 0 16px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.page-header--left .subtitle {
+  margin: 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.dashboard-stats {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* HomePage 用 <Link> 包住整張卡片，需要拿掉連結預設的底線與顏色繼承 */
+.link-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    rgba(0, 0, 0, 0.14) 0 12px 18px -4px,
+    rgba(0, 0, 0, 0.07) 0 4px 8px -2px;
+}
+
+.feature-list {
+  margin-top: 40px;
+}
+
+.feature-list ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NotFoundPage */
+.not-found {
+  text-align: center;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.not-found__code {
+  font-family: var(--mono);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+  line-height: 1;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.form-input {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-h);
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+.form-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.secondary-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.empty-state {
+  font-size: 14px;
+  color: var(--text);
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.badge {
+  font-size: 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+/* LoginPage 表單 */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.form-error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 13px;
+  text-align: left;
+}
+
+/* DashboardPage 底部的操作提示 */
+.dashboard-hint {
+  margin-top: 32px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--code-bg);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
