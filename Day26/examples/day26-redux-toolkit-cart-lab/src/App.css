@@ -1,0 +1,214 @@
+/* 整頁置中容器，延續前幾天 page-header／card 的視覺語言 */
+.shop-page {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  box-sizing: border-box;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.page-header h1 {
+  margin: 8px 0 16px;
+}
+
+.subtitle {
+  color: var(--text);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 左：商品列表（較寬）；右：購物車面板（較窄、sticky） */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.cart-panel {
+  position: sticky;
+  top: 24px;
+}
+
+/* 商品卡片：自動換行的響應式格線 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.product-card__image {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.product-card__name {
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 14px;
+  margin: 0;
+}
+
+.product-card__price {
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0;
+}
+
+.cart-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.cart-item__image {
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.cart-item__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cart-item__name {
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.form-hint {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.cart-item__qty {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.button-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  font-size: 14px;
+  color: var(--text);
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.live-echo {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 16px;
+  text-align: right;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  width: 100%;
+}
