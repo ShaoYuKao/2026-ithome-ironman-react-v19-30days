@@ -1,0 +1,15 @@
+{
+  "name": "day28-ecommerce-cart-app-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Day28 範例的後端 API：提供商品清單（GET /api/products）與登入／登出（POST /api/login、POST /api/logout），供前端 productsSlice／userSlice 的 createAsyncThunk 練習使用。",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
