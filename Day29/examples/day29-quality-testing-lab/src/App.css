@@ -1,0 +1,136 @@
+/* ===== App Shell ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.app__lead {
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* ===== 購物車小計（CartSummary） ===== */
+.cart-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* ===== 商品清單 ===== */
+.product-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 16px;
+  background: #fff;
+}
+
+.product-card__image {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.product-card__name {
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.product-card__price {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.product-card__stock {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* ===== 數量調整（QuantityStepper） ===== */
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.qty-stepper button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.qty-stepper button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qty-stepper input {
+  width: 48px;
+  height: 32px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--text-h);
+}
+
+/* ===== 加入購物車按鈕（AddToCartButton） ===== */
+.primary-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
