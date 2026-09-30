@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React 30 天學習筆記｜Day30 專案整合與部署上線</title>
+    <script type="text/javascript">
+      // 對應 public/404.html 的「還原網址」腳本（見 README 第六節）。
+      //
+      // GitHub Pages 是純靜態伺服器，使用者直接整頁重新整理
+      // /days/5 這種前端路由網址時，會先命中 404.html，那支腳本會把
+      // 真正想去的路徑暫存成 "?/days/5" 這種 query string 格式，
+      // 再導回這裡（index.html）。這段腳本必須在 React Router 接手、
+      // main.jsx 執行之前先跑完，把網址「悄悄」還原成 /days/5，
+      // 讓 createBrowserRouter 讀到正確的 pathname，使用者完全不會
+      // 察覺任何一次多餘的畫面閃爍或跳轉。
+      // 原始出處（MIT License）：https://github.com/rafgraph/spa-github-pages
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

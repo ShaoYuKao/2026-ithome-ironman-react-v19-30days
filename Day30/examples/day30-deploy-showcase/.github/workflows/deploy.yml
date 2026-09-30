@@ -1,0 +1,74 @@
+# .github/workflows/deploy.yml
+#
+# 參考用的 GitHub Actions 部署流程：推送到 main 分支後，自動建置這個
+# 範例專案，並部署到 GitHub Pages（詳見 README 第八節）。
+#
+# ⚠️ 重要：GitHub Actions 只會讀取「repository 根目錄」底下的
+# .github/workflows/*.yml。如果把這個範例整個資料夾複製成獨立的 repo，
+# 這份檔案就已經在正確的位置，不需要搬動；但如果像本教學一樣，
+# 這個範例是放在一個更大的 monorepo（Books/）裡面，
+# 就必須把這份檔案「搬到」Books repo 的根目錄 .github/workflows/ 下，
+# 並保留下面的 working-directory 設定，Actions 才抓得到它。
+name: Deploy day30-deploy-showcase to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Day30/examples/day30-deploy-showcase/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Day30/examples/day30-deploy-showcase
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: Day30/examples/day30-deploy-showcase/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+        env:
+          # 用 GitHub Actions 內建的變數自動組出 base 路徑（/repo名稱/），
+          # 不需要在 .env.production 裡手動寫死 repo 名稱。
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Day30/examples/day30-deploy-showcase/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

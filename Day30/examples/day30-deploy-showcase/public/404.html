@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <script type="text/javascript">
+      // public/404.html：解決「SPA 用戶端路由 + GitHub Pages」的經典問題。
+      //
+      // GitHub Pages 是純靜態檔案伺服器，只認識實體檔案路徑。使用者如果
+      // 直接在網址列輸入（或重新整理）/days/5，GitHub Pages 找不到對應的
+      // 實體檔案，就會回傳這支 404.html——但我們不想讓使用者真的看到
+      // 404 畫面，而是想讓 React Router 接手、正確顯示 Day 5 的頁面。
+      //
+      // 做法：把目前網址轉換成「query string」的形式（例如
+      // /days/5 → /?/days/5），導回真正的 index.html；index.html 裡的
+      // 還原腳本（見 index.html 的 <head>）會再把網址「還原」回 /days/5，
+      // 交給 React Router 依照正確的 pathname 渲染畫面。
+      //
+      // 這是社群廣泛使用的公開解法（MIT License），出處：
+      // https://github.com/rafgraph/spa-github-pages
+
+      // pathSegmentsToKeep：要保留幾層路徑當作「repo 名稱」。
+      // - 部署到 GitHub Pages「專案頁」（帳號.github.io/repo名稱/）：設成 1。
+      // - 部署到 GitHub Pages「使用者／組織頁」（帳號.github.io）：設成 0。
+      var pathSegmentsToKeep = 1
+
+      var l = window.location
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(pathSegmentsToKeep)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash,
+      )
+    </script>
+  </head>
+  <body></body>
+</html>
