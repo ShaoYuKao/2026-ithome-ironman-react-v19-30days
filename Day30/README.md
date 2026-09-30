@@ -1,6 +1,6 @@
 # Day 30｜專案整合與部署上線
 
-- 今日範例程式碼(連結)：[`Day29\examples\day29-quality-testing-lab`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day30/examples/day30-deploy-showcase)
+- 今日範例程式碼(連結)：[`Day30\examples\day30-deploy-showcase`](https://github.com/ShaoYuKao/2026-ithome-ironman-react-v19-30days/tree/master/Day30/examples/day30-deploy-showcase)
 
 ## 一、今天是最後一哩路：從「能動」到「能上線」
 
